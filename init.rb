@@ -4,7 +4,7 @@ Redmine::Plugin.register :redmine_hide_estimated_hours do
   name 'Hide estimated hours'
   author 'Dominique Lederer (return1)'
   description 'This Redmine plugin reuses the "view_time_entries" permission to hide the estimated hours field'
-  version '1.0.1'
+  version '1.0.2'
   url 'http://return1.at/'
   author_url 'http://return1.at/'
 
@@ -20,4 +20,4 @@ Dispatcher.to_prepare :redmine_hide_estimated_hours do
   end
 end
 
-require 'redmine_hide_estimated_hours/hooks/helper_issues_show_detail_after_setting_hook'
+require 'redmine_hide_estimated_hours/patches/issues_helper'
