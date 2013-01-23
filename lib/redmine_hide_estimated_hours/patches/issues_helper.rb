@@ -68,7 +68,6 @@ module IssuesHelper
     end
 
     # do not show any history for estimated_hours!
-    Rails.logger.warn("yeah!")
     return "" if detail.prop_key == 'estimated_hours' && !User.current.allowed_to?(:view_time_entries, @project)
 
     if detail.property == 'attr' && detail.prop_key == 'description'
